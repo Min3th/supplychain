@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block head %}
+     <link rel = "stylesheet" type ="text/css" href="{{url_for('static', filename = '/css/orderpagestyle.css')}}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+{% endblock %}
+
+{% block content %}
+
+
+
+{% for message in get_flashed_messages() %}
+
+  <div class="alert alert-dark alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+    
+{% endfor %}
+
+{% if product_name %}
+    <h1>Hello {{product_name}} !!</h1>
+    
+    
+
+    
+    
+{% else %}
+    
+    <div class="wrapper">
+        <h1>User List</h1>
+        <form method="POST">
+            {{form.hidden_tag()}}
+
+            <div class = "input-box">
+            
+            {{form.product_name(class="form-control",placeholder ="Product name")}}
+            </div>
+        
+            <div class = "input-box">
+            
+            {{form.route(class="form-control",placeholder ="Route")}}
+            </div>
+            
+            <div class = "input-box">
+            
+            {{form.quantity(class="form-control",placeholder ="Quantity")}}
+            </div>
+            
+            <div class = "input-box">
+            
+            {{form.address(class="form-control",placeholder ="Address")}}
+            </div>
+            
+            
+            {{form.submit(class="btn btn-secondary custom-button")}}
+            
+        </form>
+    </div> 
+
+{% endif %} 
+
+{% endblock %}

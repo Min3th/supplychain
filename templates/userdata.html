@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block head %}
+     <link rel = "stylesheet" type ="text/css" href="{{url_for('static', filename = '/css/userlist.css')}}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+{% endblock %}
+
+{% block content %}
+
+
+
+{% for message in get_flashed_messages() %}
+
+  <div class="alert alert-dark alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+    
+{% endfor %}
+
+
+<div class="wrapper">
+
+    <br/><br/>
+    <h2>Users Added</h2>
+    <br/>
+    <table class="table table-hover table-bordered table-striped">
+        <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            
+                
+        
+          {% for user in our_users %}
+          <tr>
+
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+
+        
+          </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

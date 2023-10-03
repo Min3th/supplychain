@@ -1,0 +1,75 @@
+/* *{
+    margin: 0px;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+
+
+} */
+
+ body{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+    background-size: auto;
+    background-position:center;
+
+} 
+
+.c-item{
+    height: 480px;
+}
+.c-img{
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+/* Custom styles for the carousel-control-prev button */
+.carousel-control-prev {
+    /* Add your custom styles here */
+    background-color: #007bff00; /* Change background color */
+    color: redW #ffffff00; /* Change text color */
+    border: 2px solid #007bff00; /* Change border color and size */
+    padding: 10px 15px; /* Adjust padding as needed */
+    font-size: 24px; /* Change font size */
+}
+.carousel-control-prev:hover {
+    background-color: #b3000000; /* Change background color on hover */
+    border-color: #0057b300; /* Change border color on hover */
+    color: #ffffff00; /* Change text color on hover */
+}
+
+.carousel-control-next {
+    /* Add your custom styles here */
+    background-color: #007bff00; /* Change background color */
+    color: redW #ffffff00; /* Change text color */
+    border: 2px solid #007bff00; /* Change border color and size */
+    padding: 10px 15px; /* Adjust padding as needed */
+    font-size: 24px; /* Change font size */
+}
+.carousel-control-next:hover {
+    background-color: #b3000000; /* Change background color on hover */
+    border-color: #0057b300; /* Change border color on hover */
+    color: #ffffff00; /* Change text color on hover */
+}
+
+.c-icon{
+    font-size: 20px;
+}
+
+.c-small{
+    width: 10px;
+    color: red;
+}
+
+.carousel-indicators button{
+    height:0.5px;
+    margin: 2px;
+    width: 30px;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 40%;
+}
+

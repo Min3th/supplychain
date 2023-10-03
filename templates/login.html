@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block head %}
+     <link rel = "stylesheet" type ="text/css" href="{{url_for('static', filename = '/css/loginmenu.css')}}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+{% endblock %}
+
+{% block content %}
+
+
+
+{% for message in get_flashed_messages() %}
+
+  <div class="alert alert-dark alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+    
+{% endfor %}
+
+{% if name %}
+    <h1>Hello {{name}} !!</h1>
+    
+    
+
+    
+    
+{% else %}
+    <div class="wrapper">
+        <h1>User Login</h1>
+        <form method="POST">
+            {{form.hidden_tag()}}
+
+            <div class = "input-box">
+            {{form.name.label(class="form-label")}}
+            {{form.name(class="form-control")}}
+            </div>
+            <br/>
+            <div class = "input-box">
+            {{form.email.label(class="form-label")}}
+            {{form.email(class="form-control")}}
+            </div>
+            <br/>
+            
+            {{form.submit(class="btn btn-secondary custom-button")}}
+            
+        </form>
+    </div> 
+
+{% endif %} 
+
+{% endblock %}
