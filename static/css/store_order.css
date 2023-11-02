@@ -22,15 +22,13 @@ body{
 .product-cards {
     display: flex;
     justify-content: space-between; /* Adjust the alignment as needed */
-    margin-top: 70px;
-    background-color: #4f4f4f;
+    margin-top: 100px;
+    background-color: #7b7b7b;
   }
   
   .card {
     width: 40%; /* Adjust the width of each card as needed */
-    margin: 5px;
-    height: 350px;
-    align-items: center;
+    margin: 3px;
     
   }
   
@@ -42,8 +40,8 @@ body{
     margin-bottom: 100px;
     align-items: center;
     width: 420px;
-    height: 500px;
-    background-color:#4f4f4f;
+    height: 800px;
+    background-color:#7b7b7b;
     border: 2px solid rgba(255,255,255, .2);
     backdrop-filter:blur(20px) ;
     box-shadow: 0 0 10px rgba(0,0,0,.2);

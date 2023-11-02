@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-     <link rel = "stylesheet" type ="text/css" href="{{url_for('static', filename = '/css/login.css')}}">
+     <link rel = "stylesheet" type ="text/css" href="{{url_for('static', filename = '/css/loginmenu.css')}}">
      <link rel = "stylesheet" type ="text/css" href="{{url_for('static', filename = '/css/navbar.css')}}">  
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
 {% endblock %}
@@ -9,7 +9,7 @@
 {% block content %}
 
 
-<div class ="flash-messages">
+
 {% for message in get_flashed_messages() %}
 
   <div class="alert alert-dark alert-dismissible fade show" role="alert">
@@ -18,16 +18,19 @@
   </div>
     
 {% endfor %}
-</div>
+
 {% if name %}
     <h1>Hello {{name}} !!</h1>
+    
+    
+
+    
     
 {% else %}
     <div class="wrapper">
         <h1>User Login</h1>
         <form method="POST">
             {{form.hidden_tag()}}
-            
 
             <div class = "input-box">
                 {{form.email.label(class="form-label")}}
@@ -39,9 +42,26 @@
                 {{form.password(class="form-control")}}
             </div>
             <br/>
-           
+            <div class="input-box">
+                {{ form.name.label(class="form-label") }}
+                {{ form.name(class="form-control") }}
+            </div>
+            <br/>
+            <div class="input-box">
+                {{ form.Type_ID.label(class="form-label") }}
+                {{ form.Type_ID(class="form-control") }}
+            </div>
+            <br/>
+            <div class="input-box">
+                {{ form.address.label(class="form-label") }}
+                {{ form.address(class="form-control") }}
+            </div>
+            <br/>
+            {{ form.submit(class="btn btn-secondary custom-button") }}
             
-            {{form.submit(class="btn btn-secondary custom-button")}}
+            
+            
+           
             
         </form>
     </div> 

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+     <link rel = "stylesheet" type ="text/css" href="{{url_for('static', filename = '/css/login.css')}}">
+     <link rel = "stylesheet" type ="text/css" href="{{url_for('static', filename = '/css/navbar.css')}}">  
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+{% endblock %}
+
+{% block nav %}
+
+
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="card" style="width: 18rem; text-align: center;background-color: rgb(133, 133, 133);display: inline-block;vertical-align: top;">
+  <img src="static/images/supply_chain.png" class="card-img-top" alt="..." style="width:95%;display: block; margin: 0 auto;margin-top: 5px;">
+  <div class="card-body">
+      <h5 class="card-title" style="font-weight: bold;">Order</h5>
+      <p class="card-text">Place an order from the company to the railway station.</p>
+      <a href="/user_order" class="btn btn-secondary">Place Order</a>
+  </div>
+</div>
+{% endblock %}

@@ -18,3 +18,19 @@ body{
     background-position:center;
 
 }
+
+th:first-child, td:first-child {
+    width: 50%;
+}
+
+th:last-child, td:last-child {
+    width: 50%;
+}
+
+.table-container {
+    width: 50%;
+    float: left;
+    margin: 10px;
+    padding: 10px;
+}
+

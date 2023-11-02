@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Login</title>
+        <link rel = "stylesheet" type ="text/css" href="{{url_for('static', filename = '/css/style.css')}}"> 
+    </head>
+    <body>
+        <nav>
+            <div class="logo">
+                <p>A company</p>
+            </div>
+            <ul>
+                <li><a href="Home page.html">Home</a></li>
+                <li><a href="about.html">about</a></li>
+                <li><a href="contact.html">contact</a></li>
+            </ul>
+        </nav>
+        <div class="box" >
+            <form method="POST">
+                <h3>log in</h3>
+
+
+                <div class="inputbox">
+                    <span>
+                    {{form.email.label(class="form-label")}}
+                    {{form.email(class="form-control")}}
+                    </span>
+                    
+                    <i></i>
+                </div>
+                <div class="inputbox">
+                    <span>
+                    {{form.password.label(class="form-label")}}
+                    {{form.password(class="form-control")}}
+                    </span>
+                    <i></i>
+                </div>
+                <div class="links">
+                    <a href="#">Fogot password</a>
+                    <a href="#">sign up</a>
+                </div>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+</html>

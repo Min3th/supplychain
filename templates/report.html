@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='/css/report.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='/css/navbar.css')}}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <br/><br/><br/>
+    <div class="table-container">
+        <table class="table table-hover table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Best Selling items</th>
+                    <th scope="col">Total Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in product_data %}
+                <tr>
+                    <td>{{ product[0] }}</td>
+                    <td>{{ product[1] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="table-container">
+        <table class="table table-hover table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Driver Name</th>
+                    <th scope="col">Total Hours Worked</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for driver in driver_data %}
+                <tr>
+                    <td>{{ driver[0] }}</td>
+                    <td>{{ driver[1] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="table-container">
+    <table class="table table-hover table-bordered table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Truck ID</th>
+                <th scope="col">Total Hours Used</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for truck in truck_data %}
+            <tr>
+                <td>{{ truck[0] }}</td>
+                <td>{{ truck[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <table class="table table-hover table-bordered table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Unit Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for report in report_data %}
+            <tr>
+                <td>{{ report[1] }}</td>
+                <td>{{ report[0] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

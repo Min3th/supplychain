@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block head %}
+     <link rel = "stylesheet" type ="text/css" href="{{url_for('static', filename = '/css/store_order.css')}}">
+     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='/css/navbar.css')}}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+{% endblock %}
+
+{% block content %}
+
+
+
+{% for message in get_flashed_messages() %}
+
+  <div class="alert alert-dark alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+    
+{% endfor %}
+
+
+
+<div class="product-cards">
+  <div class="card">
+    <img src="static/images/product1.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Google Pixel 8 Pro</h5>
+    </div>
+    <div class="card-footer">
+      <h6>Rs.280000</h6>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="static/images/product2.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Nikon Camera</h5>
+    </div>
+    <div class="card-footer">
+      <h6>Rs.50000</h6>
+    </div>
+  </div>
+  
+  <div class="card">
+    <img src="static/images/product3.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Tissot PRX Powermatic</h5>
+    </div>
+    <div class="card-footer">
+      <h6>Rs.300000</h6>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="static/images/product5.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">LG Washing Machine</h5>
+    </div>
+    <div class="card-footer">
+      <h6>Rs.95000</h6>
+    </div>
+  </div>
+  
+  <div class="card">
+    <img src="static/images/product6.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Sony WH-1000MX5 Headphones</h5>
+    </div>
+    <div class = "card-footer">
+      <h6>Rs.28000</h6>
+    </div>
+  </div>
+  
+  <div class="card">
+    <img src="static/images/product4.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">HP Printer</h5>
+    </div>
+    <div class="card-footer">
+      <h6>Rs.15000.50</h6>
+    </div>
+  </div>
+  
+  <div class="card">
+    <img src="static/images/product7.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Philips Coffee Maker</h5>
+    </div>
+    <div class="card-footer">
+      <h6>Rs.30000</h6>
+    </div>
+  </div>
+</div>
+  
+    
+    <div class="wrapper">
+        <h1>Order form</h1>
+        <form method="POST">
+            {{form.hidden_tag()}}
+
+            <div class="input-box">
+                {{ form.Store_ID(class="form-control", placeholder="Store ID") }}
+            </div>   
+            <div class="input-box">
+                {{ form.quantity(class="form-control", placeholder="Quantity") }}
+            </div>
+            <div class="input-box">
+                {{ form.Truck_ID(class="form-control", placeholder="Truck ID") }}
+            </div>
+            
+            <div class="input-box">
+                {{ form.Product_ID(class="form-control", placeholder="Product ID") }}
+            </div>
+            
+            <div class="input-box">
+                {{ form.Truck_Route_ID(class="form-control", placeholder="Truck Route ID") }}
+            </div>
+            <div class="input-box">
+                {{ form.Driver_ID(class="form-control", placeholder="Driver ID") }}
+            </div>
+            <div class="input-box">
+                {{ form.Ass_Driver_ID(class="form-control", placeholder="Assistant Driver ID") }}
+            </div>
+            
+
+            
+            
+            {{form.submit(class="btn btn-secondary custom-button")}}
+            
+        </form>
+    </div> 
+</div>
+
+
+
+{% endblock %}
